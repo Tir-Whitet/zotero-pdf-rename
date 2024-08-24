@@ -1,6 +1,7 @@
 import { config } from "../../package.json";
 export { renameSelectedItems, messageWindow };
 
+// 提供了一种方便的方式来显示带有状态和图标的进度窗口消息。它可以用于通知用户操作的结果（成功、失败或其他状态），并增强用户体验。
 function messageWindow(info: string, status: string) {
   new ztoolkit.ProgressWindow(config.addonName, {
     closeOnClick: true,
@@ -13,6 +14,8 @@ function messageWindow(info: string, status: string) {
     .show();
 }
 
+// 是一个异步函数，用于批量重命名 Zotero 中用户选择的项目项的附件文件。
+// 它根据项目的元数据生成新的文件名，并更新附件文件的名称和标题字段
 async function renameSelectedItems() {
   const items = getSelectedItems();
   if (items.length === 0) {
@@ -43,6 +46,8 @@ async function renameSelectedItems() {
   }
 }
 
+// 用于从 Zotero 界面中获取用户当前选择的项目项，并确保返回的是唯一的常规项目（regular items）。
+// 它处理了直接选择的常规项目和通过附件关联的父项目
 function getSelectedItems() {
   let items = Zotero.getActiveZoteroPane().getSelectedItems();
   // get regular items
@@ -60,6 +65,10 @@ function getSelectedItems() {
   return items;
 }
 
+// Get the first PDF attachment from the item
+// To be changed here 
+// Input item and Options
+// Output: attachment filename,  
 function getAttachmentFromItem(item: Zotero.Item) {
   const oldTitle = item.getField("title").toString().slice(0, 10);
   const attachmentIDs = item.getAttachments();
@@ -119,7 +128,7 @@ function getJournalShortTitle(item: Zotero.Item) {
 }
 
 function generateJournalShortTitle(item: Zotero.Item) {
-  let jst = "Pre";
+  let jst = "Unknown";
   if (item.itemType === "journalArticle") {
     const journalName = item.getField("publicationTitle").toString();
     if (journalName.includes("arXiv")) {
@@ -151,7 +160,7 @@ function generateJournalShortTitle(item: Zotero.Item) {
 
 function firstLetterOfEachWord(str: string) {
   if (str === "") {
-    return "Pre";
+    return "Unknown";
   }
   // Use each capitalized initial letter of the journal title as an abbreviation
   const words = str.split(" ");
@@ -159,8 +168,6 @@ function firstLetterOfEachWord(str: string) {
   const capitalizedWords = words.filter(
     (word) =>
       word[0] === word[0].toUpperCase() &&
-      word !== "IEEE" &&
-      word !== "ACM" &&
       word !== "The" &&
       !word.match(/\d+/)
   );

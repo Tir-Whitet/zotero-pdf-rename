@@ -3,6 +3,8 @@ import { getString } from "../utils/locale";
 import { renameSelectedItems } from "./rename";
 import { messageWindow } from "./rename";
 
+// 用于包裹静态方法，添加日志记录和错误处理功能。
+// 每次调用被装饰的方法时，它会记录调用信息（包括方法名），并在发生错误时记录错误详情。
 function example(
   target: any,
   propertyKey: string | symbol,

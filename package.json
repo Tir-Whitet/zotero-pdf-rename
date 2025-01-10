@@ -1,10 +1,10 @@
 {
-  "name": "zotero-pdf-rename",
+  "name": "zotero-pdf-rename-modified-self",
   "version": "1.0.0",
   "description": "Custom rename pdf",
   "config": {
     "addonName": "Zotero PDF Rename",
-    "addonID": "pdfrename@theigrams.com",
+    "addonID": "Bismarckl@163.com",
     "addonRef": "pdfrename",
     "addonInstance": "AddonPDFRename",
     "prefsPrefix": "extensions.zotero.addonpdfrename",
@@ -34,7 +34,7 @@
     "type": "git",
     "url": "git+https://github.com/Theigrams/zotero-pdf-custom-rename.git"
   },
-  "author": "JinZhang",
+  "author": "Zhong Lin",
   "license": "AGPL-3.0-or-later",
   "bugs": {
     "url": "https://github.com/Theigrams/zotero-pdf-custom-rename/issues"

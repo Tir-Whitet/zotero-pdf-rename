@@ -1,5 +1,9 @@
 # Zotero PDF Rename
 
+## Modified
+This plugin is a fork of [Theigrams/zotero-pdf-custom-rename](https://github.com/Theigrams/zotero-pdf-custom-rename)
+Add a check box for the format of rename to fit personal need.
+
 [![zotero target version](https://img.shields.io/badge/Zotero-7.0.*-green&logo=zotero&logoColor=CC2936)](https://www.zotero.org/support/beta_builds)
 [![Latest release](https://img.shields.io/github/v/release/Theigrams/zotero-pdf-custom-rename)](https://github.com/Theigrams/zotero-pdf-custom-rename/releases)
 [![code size](https://img.shields.io/github/languages/code-size/Theigrams/zotero-pdf-custom-rename)](#zotero-pdf-custom-rename)

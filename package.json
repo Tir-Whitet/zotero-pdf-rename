@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "Custom rename pdf",
   "config": {
-    "addonName": "Zotero PDF Rename",
+    "addonName": "Zotero PDF Rename - personal modified",
     "addonID": "Bismarckl@163.com",
     "addonRef": "pdfrename",
-    "addonInstance": "AddonPDFRename",
+    "addonInstance": "AddonPDFRename_mod",
     "prefsPrefix": "extensions.zotero.addonpdfrename",
     "releasepage": "https://github.com/Theigrams/zotero-pdf-custom-rename/releases/latest/download/zotero-pdf-rename.xpi",
     "updaterdf": "https://raw.githubusercontent.com/Theigrams/zotero-pdf-custom-rename/main/update.json"

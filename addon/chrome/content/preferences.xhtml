@@ -55,27 +55,32 @@
       <groupbox>
         <label><html:h2 data-l10n-id="pref-rename-format"></html:h2></label>
         <vbox>
-            <checkbox
-              id="zotero-prefpane-__addonRef__-rename-format1"
-              preference="extensions.zotero.__addonRef__.renameFormat"
-              value="Year-Journal-Author"
-              checked="true"
-              label="年份-期刊-作者"
-              oncommand="
-                document.getElementById('zotero-prefpane-__addonRef__-rename-format2').checked = false;
-                Services.prefs.setCharPref('extensions.zotero.__addonRef__.renameFormat', 'Year-Journal-Author');
-              "
-            />
-            <checkbox
-              id="zotero-prefpane-__addonRef__-rename-format2"
-              preference="extensions.zotero.__addonRef__.renameFormat"
-              value="Journal-Year-Author"
-              label="期刊-年份-作者"
-              oncommand="
-                document.getElementById('zotero-prefpane-__addonRef__-rename-format1').checked = false;
-                Services.prefs.setCharPref('extensions.zotero.__addonRef__.renameFormat', 'Journal-Year-Author');
-              "
-            />
+          <radiogroup
+          id="zotero-prefpane-pdfrename-rename-format-group"
+          preference="extensions.zotero.pdfrename.renameFormat"
+        >
+          <radio
+            id="zotero-prefpane-pdfrename-rename-format1"
+            label="年份-期刊-作者"
+            value="Year-Journal-Author"
+            oncommand="
+              document.getElementById('zotero-prefpane-pdfrename-rename-format2').checked = false;
+              Services.prefs.setCharPref('extensions.zotero.pdfrename.renameFormat', 'Year-Journal-Author');
+              Zotero.debug('[renamePDF] Set renameFormat to Year-Journal-Author');
+            "
+          />
+          <radio
+            id="zotero-prefpane-pdfrename-rename-format2"
+            label="期刊-年份-作者"
+            value="Journal-Year-Author"
+            oncommand="
+              document.getElementById('zotero-prefpane-pdfrename-rename-format1').checked = false;
+              Services.prefs.setCharPref('extensions.zotero.pdfrename.renameFormat', 'Journal-Year-Author');
+              Zotero.debug('[renamePDF] Set renameFormat to Journal-Year-Author');
+            "
+          />
+        </radiogroup>
+        
         </vbox>
       </groupbox>
     </vbox>

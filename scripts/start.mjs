@@ -2,7 +2,9 @@ import process from "process";
 import { execSync } from "child_process";
 import { exit } from "process";
 import minimist from "minimist";
-import cmd from "./zotero-cmd.json" assert { type: "json" };
+// import cmd from "./zotero-cmd.json" assert { type: "json" };
+// Create a new zotero-cmd.json; Original zotero-cmd.json is not available.
+import cmd from "./zotero-cmd.json" with { type: "json" };
 const { exec } = cmd;
 
 // Run node start.js -h for help

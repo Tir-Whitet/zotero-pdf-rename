@@ -10,3 +10,6 @@ prefs-table-title = Title
 prefs-table-detail = Detail
 tabpanel-lib-tab-label = Lib Tab
 tabpanel-reader-tab-label = Reader Tab
+pref-rename-format = Rename Format
+pref-rename-format1 = Year-Journal-Author
+pref-rename-format2 = Journal-Year-Author

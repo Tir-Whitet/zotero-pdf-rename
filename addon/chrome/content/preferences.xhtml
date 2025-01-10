@@ -51,6 +51,35 @@
         </vbox>
       </groupbox>
 
+    <vbox>
+      <groupbox>
+        <label><html:h2 data-l10n-id="pref-rename-format"></html:h2></label>
+        <vbox>
+            <checkbox
+              id="zotero-prefpane-__addonRef__-rename-format1"
+              preference="extensions.zotero.__addonRef__.renameFormat"
+              value="Year-Journal-Author"
+              checked="true"
+              label="年份-期刊-作者"
+              oncommand="
+                document.getElementById('zotero-prefpane-__addonRef__-rename-format2').checked = false;
+                Services.prefs.setCharPref('extensions.zotero.__addonRef__.renameFormat', 'Year-Journal-Author');
+              "
+            />
+            <checkbox
+              id="zotero-prefpane-__addonRef__-rename-format2"
+              preference="extensions.zotero.__addonRef__.renameFormat"
+              value="Journal-Year-Author"
+              label="期刊-年份-作者"
+              oncommand="
+                document.getElementById('zotero-prefpane-__addonRef__-rename-format1').checked = false;
+                Services.prefs.setCharPref('extensions.zotero.__addonRef__.renameFormat', 'Journal-Year-Author');
+              "
+            />
+        </vbox>
+      </groupbox>
+    </vbox>
+      
       <separator />
       <separator class="thin" />
 

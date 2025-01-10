@@ -71,6 +71,10 @@ async function startup({ id, version, resourceURI, rootURI }, reason) {
     rootURI = resourceURI.spec;
   }
 
+  if (!Services.prefs.prefHasUserValue("extensions.zotero.__addonRef__.renameFormat")) {
+    Services.prefs.setCharPref("extensions.zotero.__addonRef__.renameFormat", "Year-Journal-Author");
+  }
+  
   if (Zotero.platformMajorVersion >= 102) {
     var aomStartup = Components.classes[
       "@mozilla.org/addons/addon-manager-startup;1"

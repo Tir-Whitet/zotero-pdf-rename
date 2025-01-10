@@ -10,3 +10,6 @@ prefs-table-title = 标题
 prefs-table-detail = 详情
 tabpanel-lib-tab-label = 库标签
 tabpanel-reader-tab-label = 阅读器标签
+pref-rename-format = 重命名格式
+pref-rename-format1 = 年份-期刊-作者
+pref-rename-format2 = 期刊-年份-作者

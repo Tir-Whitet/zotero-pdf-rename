@@ -101,8 +101,21 @@ function getAttachmentName(item: Zotero.Item) {
     shortTitle = item.getField("title");
   }
   const year = item.getField("year");
-  let newFileName = `${jst}_${year}_${shortTitle}.pdf`;
-  newFileName = Zotero.Utilities.cleanTags(newFileName);
+
+  const renameFormat = Zotero.Prefs.get("extensions.zotero.__addonRef__.renameFormat", true);
+  let newFileName;
+  if (renameFormat === "Year-Journal-Author") {
+    newFileName = `${year}_${jst}_${shortTitle}.pdf`;
+  } else if (renameFormat === "Journal-Year-Author") {
+    newFileName = `${jst}_${year}_${shortTitle}.pdf`;
+  } else {
+    Zotero.debug("[renamePDF] Unknown rename format; defaulting to Year-Journal-Author");
+    newFileName = `${year}_${jst}_${shortTitle}.pdf`;
+  }
+
+
+  // let newFileName = `${jst}_${year}_${shortTitle}.pdf`;
+  // newFileName = Zotero.Utilities.cleanTags(newFileName);
   Zotero.debug("[renamePDF] New file name: " + newFileName);
   return newFileName;
 }
